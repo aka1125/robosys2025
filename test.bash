@@ -14,11 +14,11 @@ a=$(seq 5 | ./plus)
 test "$a" = 15 || ng "$LINENO"
 
 ### STRANGE INSERT ###
-a=$(seq あ| ./plus)
+a=$(echo あ| ./plus)
 test "$?" = 1 || ng "$LINENO"
 test "$a" = "" || ng "$LINENO"
 
-a=$(seq | ./plus)
+a=$(echo | ./plus)
 test "$?" = 1 || ng "$LINENO"
 test "$a" = "" || ng "$LINENO"
 
