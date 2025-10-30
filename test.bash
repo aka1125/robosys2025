@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xv
 # SPDX-FileCopyrightText: 2025 Yusaku Aka
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -8,9 +8,9 @@ ng () {
 }
 
 res=0
-a=山田
-test "$a" = 上田 || ng "$LINENO"
-test "$a" = 山田 || ng "$LINENO"
+a=$(seq 5 | ./plus)
+test "$a" = 15 || ng "$LINENO"
+test "$res" = 0 && echo OK
 
 exit $res
 
