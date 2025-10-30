@@ -8,9 +8,20 @@ ng () {
 }
 
 res=0
+
+### NORMAL INSERT ###
 a=$(seq 5 | ./plus)
 test "$a" = 15 || ng "$LINENO"
-test "$res" = 0 && echo OK
 
+### STRANGE INSERT ###
+a=$(seq あ| ./plus)
+test "$?" = 1 || ng "$LINENO"
+test "$a" = "" || ng "$LINENO"
+
+a=$(seq | ./plus)
+test "$?" = 1 || ng "$LINENO"
+test "$a" = "" || ng "$LINENO"
+
+test "$res" = 0 && echo OK
 exit $res
 
