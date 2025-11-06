@@ -15,18 +15,16 @@ a=$(echo "1+1.0" | ./rounding_error.py | tail -n 1)
 test "$a" = "$expected_a" || ng "$LINENO"
 
 ### STRANGE INSERT ###
-expected_error_output="エラーが発生しました。入力形式を確認してください"
 a=$(echo "あ" | ./rounding_error.py | grep "エラーが発生しました")
-test "$?" = 0 || ng "$LINENO"
-# 抽出された行が期待されるメッセージを含んでいるか確認
+test "$?" = 0 || ng "$LINENO" 
 test "$a" != "" || ng "$LINENO"
 
 
 # 空入力のテスト
-a=$(echo "" | ./rounding_error.py | tail -n 1)
 expected_empty_output="有効な入力がありませんでした。"
+# プロンプトを除去する sed コマンドを追加
+a=$(echo "" | ./rounding_error.py | tail -n 1 | sed 's/.*: //')
 test "$a" = "$expected_empty_output" || ng "$LINENO"
-
 
 # --- 最終結果 ---
 test "$res" = 0 && echo "OK"
