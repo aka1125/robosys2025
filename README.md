@@ -3,18 +3,22 @@
 
 標準入力から読み込んだ数字を足す。
 
-# 使用方法
-- コマンド実行例:
-  - seq 3 | ./plus
-- 期待される出力:
-  - 6
+# 使用例
 
-#インストール手順
-- リポジトリのクローン:
-  - git clone https://github.com/aka1125/robosys2025
-  - cd robosys2025
-- 実行可能ファイルのパーミッション:
-  - chmod +x plus
+```bash
+$ git clone...
+$ cd robosys2025
+$ seq 3 | ./plus
+$ 6
+```
+
+# インストール手順
+
+```bash
+$ git clone https://github.com/aka1125/robosys2025
+$ cd robosys2025
+$ - chmod +x plus
+```
 
 ## 必要なソフトウェア
 - Python
