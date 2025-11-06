@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Yusaku Aka
+# SPDX-License-Identifier: BSD-3-Clause
 
 from decimal import Decimal, getcontext, ROUND_HALF_UP
 
