@@ -4,6 +4,7 @@
 標準入力から読み込んだ数字を足す。
 
 # rounding_errorコマンド
+![test](https://github.com/aka1125/robosys2025/actions/workflows/rd_test.yml/badge.svg)
 
 丸め誤差の加算をする電卓機能
 
